@@ -2,8 +2,8 @@ const eqArrays = function(arr1, arr2) {
   if(arr1.length !== arr2.length) {
     return false;
   }
-  for(const num of arr1) {
-    if(arr1[num] !== arr2[num]) {
+  for(let i = 0; i < arr1.length; i++) {
+    if(arr1[i] !== arr2[i]) {
       return false;
     }
   }
@@ -21,7 +21,7 @@ const assertArraysEqual = function(array1, array2) {
 const letterPositions = function(sentence) {
   // empty object
   const results = {};
-  for(let i = 0; i <sentence.length; i++) {
+  for(let i = 0; i < sentence.length; i++) {
     // skip the spaces
     if(sentence[i] === " ") { 
       continue;
