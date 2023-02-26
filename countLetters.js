@@ -8,18 +8,18 @@ const assertEqual = function(actual, expected) {
 
 const countLetters = function(inputString) {
   const result = {};
-  // split the string where ' '(space) occurs
-  // join the string without any space
-  const newStr = inputString.split(' ').join('');
-  if(newStr) {
-    for(let letter of newStr) {
+  if(inputString) {
+    for(let letter of inputString) {
       // if letter is already in the result object then increment that letter count by 1
       // else initialize that letter in result obj by 1
-      if(result[letter]) {
-        result[letter] += 1;
-      } else {
-        result[letter] = 1;
+      if(letter !== " ") {
+        if(result[letter]) {
+          result[letter] += 1;
+        } else {
+          result[letter] = 1;
+        }
       }
+      
     }
   }
   return result;
