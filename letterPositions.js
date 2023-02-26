@@ -23,16 +23,18 @@ const letterPositions = function(sentence) {
   const results = {};
   for(let i = 0; i <sentence.length; i++) {
     // skip the spaces
-    if(sentence[i] !== " ") {
-      // checking if the array for letter is already there
-      if(results[sentence[i]]) {
-        // pushing the index of letter
-        results[sentence[i]].push(i);
-      } else {
-        // creating an array for letter if not already
-       results[sentence[i]] = [i];
-     }
-    }  
+    if(sentence[i] === " ") { 
+      continue;
+    }
+    // checking if the array for letter is already there
+    if(results[sentence[i]]) {
+      // pushing the index of letter
+      results[sentence[i]].push(i);
+    } else {
+      // creating an array for letter if not already
+      results[sentence[i]] = [i];
+    }
+     
   }
   return results;
 };
