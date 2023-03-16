@@ -1,21 +1,14 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+// tail function should returns the "tail" of an array: 
+// everything except for the first item (head) of the provided array.
+// function should not modify the array that is passed in. It should return a new array.
+
+
+const assertEqual = require('./assertEqual');
+
 const tail = function(arr) {
   return arr.slice(1);
 };
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words);
-assertEqual(words.length, 3);
-const names = ["Sam"];
-console.log(tail(names));
-assertEqual(names.length, 1);
-const abc = [];
-console.log(tail(abc));
-assertEqual(abc.length, null);
 
 
+
+module.exports = tail;
