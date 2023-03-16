@@ -3,8 +3,6 @@
 // function should not modify the array that is passed in. It should return a new array.
 
 
-const assertEqual = require('./assertEqual');
-
 const tail = function(arr) {
   return arr.slice(1);
 };
