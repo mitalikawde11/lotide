@@ -1,22 +1,6 @@
-const eqArrays = function(arr1, arr2) {
-  if(arr1.length !== arr2.length) {
-    return false;
-  }
-  for(let i = 0; i < arr1.length; i++) {
-    if(arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected) === true) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+// Implement middle which will take in an array and return the middle-most element(s) of the given array.
+// The middle function should return an array with only the middle element(s) of the provided array. 
+// For arrays with one or two elements, there is no middle. Return an empty array.
 
 const middle = function(array) {
   let midArr = [];
@@ -29,13 +13,10 @@ const middle = function(array) {
       midArr.push(array[mid]);
     }
   }
+
   return midArr;
 }
-const num1 = [1, 2, 3, 4, 5];
-const num2 = [1];
-const num3 = [1, 2, 3, 4];
-const num4 = [1, 3];
-assertArraysEqual(middle(num1), [3]);
-assertArraysEqual(middle(num2), []);
-assertArraysEqual(middle(num3), [2, 3]);
-assertArraysEqual(middle(num4), []);
+
+
+
+module.exports = middle;
