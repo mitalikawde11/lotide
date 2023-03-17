@@ -1,22 +1,9 @@
-const eqArrays = function(arr1, arr2) {
-  if(arr1.length !== arr2.length) {
-    return false;
-  }
-  for(let i = 0; i < arr1.length; i++) {
-    if(arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+const assertArraysEqual = require('./assertArraysEqual');
 
-const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected) === true) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+/*  implement a function letterPositions which will return all the indices (zero-based positions) 
+    in the string where each character is found.
+    For each letter, instead of returning just one number to represent its number of occurrences, 
+    multiple numbers may be needed to represent all the places in the string that it shows up. */
 
 const letterPositions = function(sentence) {
   // empty object
@@ -36,8 +23,13 @@ const letterPositions = function(sentence) {
     }
      
   }
+
   return results;
 };
 
+// test cases
 assertArraysEqual(letterPositions("hello").l, [2, 3]);
 assertArraysEqual(letterPositions("lighthouse in the house").h, [3, 5, 15, 18]);
+
+
+module.exports = letterPositions;

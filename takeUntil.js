@@ -1,24 +1,7 @@
 // Implement takeUntil
 
-const eqArrays = function(arr1, arr2) {
-  if(arr1.length !== arr2.length) {
-    return false;
-  }
-  for(let i = 0; i < arr1.length; i++) {
-    if(arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+const assertArraysEqual = require('./assertArraysEqual');
 
-const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected) === true) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
 
 /* ---------- takeUntil function ------------
   this function takes two parameters: 1) An array to work with
@@ -36,8 +19,10 @@ const takeUntil = function(array, callback) {
       results.push(ele);
     }
   }
+
   return results;
 };
+
 
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
 const results1 = takeUntil(data1, x => x < 0);
@@ -55,11 +40,6 @@ const data3 = ["s", "b", "23", "", "t", "k", "t"];
 const results3 = takeUntil(data3, x => x === "t");
 assertArraysEqual(results3, ["s", "b", '23',""]);
 
-/* Expected output:
 
-✅✅✅ Assertion Passed: 1,2,5,7,2 === 1,2,5,7,2
----
-✅✅✅ Assertion Passed: I've,been,to,Hollywood === I've,been,to,Hollywood
----
-✅✅✅ Assertion Passed: s,b,23, === s,b,23,
-*/
+
+module.exports = takeUntil;
