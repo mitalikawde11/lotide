@@ -1,17 +1,27 @@
-// require(import) asserEqual and tail file
-const assertEqual = require('../assertEqual');
+// require(import) chai asstert and tail file
+const assert = require('chai').assert;
 const tail = require('../tail');
 
 
 
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words);
-assertEqual(words.length, 3);
+describe("#tail", () => {
 
-const names = ["Sam", "2"];
-tail(names);
-assertEqual(names.length, 2);
+  it("Should return [2, 3, 4]", () => {
+    assert.deepEqual(tail([1, 2, 3, 4]), [2, 3, 4]);
+  });
 
-const abc = [];
-tail(abc);
-assertEqual(abc.length, 0);
+  it("Should return ['Lighthouse', 'Labs']", () => {
+    assert.deepEqual(tail(['Yo Yo', 'Lighthouse', 'Labs']), ['Lighthouse', 'Labs']);
+  });
+
+  it("Should return ['2']", () => {
+    assert.deepEqual(tail(['Sam', '2']), ['2']);
+  });
+
+  it("Should return []", () => {
+    assert.deepEqual(tail([]), []);
+  });
+
+})
+
+
